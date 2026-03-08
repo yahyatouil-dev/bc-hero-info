@@ -1,5 +1,7 @@
 # ⛉ BC HERO — Superpowers for Business Central
 
+![BC HERO COVER IMAGE](images/BC%20HERO.avif)
+
 > **BC HERO** is a Visual Studio Code extension built for Business Central AL developers. It brings together seven powerful, purpose-built tools under one unified interface — from scaffolding new projects and generating AL code, to exploring live APIs, managing translations, and visualising your schema and object dependencies.
 
 ---
@@ -472,5 +474,6 @@ Check out my blog for more insights, tutorials, and updates on Business Central 
 
 Thank you for supporting **BC HERO** — your feedback and feature requests are always appreciated!
 ---
+
 
 *BC HERO — Built for Business Central AL developers.*
