@@ -1,8 +1,8 @@
-# ⛉ BC HERO — Superpowers for Business Central
+# ⛉ AL HERO - All-in-One Toolkit for Business Central
 
-![BC HERO COVER IMAGE](images/AL HERO BANNER.avif)
+![BC HERO COVER IMAGE](images/BC HERO.avif)
 
-> **BC HERO** is a Visual Studio Code extension built for Business Central AL developers. It brings together seven powerful, purpose-built tools under one unified interface — from scaffolding new projects and generating AL code, to exploring live APIs, managing translations, and visualising your schema and object dependencies.
+> **AL Hero** is an all-in-one productivity toolkit for Microsoft Dynamics 365 Business Central AL developers. Build faster with project dashboards, project symbol browsing, AL object generation, JSON-to-AL conversion, API exploration, translation management, schema visualization, dependency analysis, and legacy C/AL migration—all from within Visual Studio Code.
 
 ---
 
@@ -10,13 +10,16 @@
 
 - [Features Overview](#features-overview)
 - [Commands Reference](#commands-reference)
-- [Quick Project Setup](#1-quick-project-setup)
-- [AL Object Creator](#2-al-object-creator)
-- [JSON → AL Generator](#3-json--al-generator)
-- [API Explorer](#4-api-explorer)
-- [Translation Assistant](#5-translation-assistant)
-- [Schema Viewer](#6-schema-viewer)
-- [Dependency Graph](#7-dependency-graph)
+- [Dashboard](#1-dashboard)
+- [Browse Project Symbols](#2-browse-project-symbols)
+- [Quick Project Setup](#3-quick-project-setup)
+- [AL Object Creator](#4-al-object-creator)
+- [JSON → AL Generator](#5-json--al-generator)
+- [API Explorer](#6-api-explorer)
+- [Translation Assistant](#7-translation-assistant)
+- [Schema Viewer](#8-schema-viewer)
+- [Dependency Graph](#9-dependency-graph)
+- [Legacy Object Converter](#10-legacy-object-converter)
 - [Getting Started](#getting-started)
 - [Tips & Shortcuts](#tips--shortcuts)
 
@@ -26,37 +29,80 @@
 
 | Tool | Command | Description |
 |---|---|---|
-| 🗂️ Quick Project Setup | `BC HERO: Open Quick Project Setup` | Scaffold a standard AL folder structure in seconds |
-| 🧱 AL Object Creator | `BC HERO: Open AL Object Creator` | Generate AL objects with a guided form and batch queue |
-| 🔄 JSON → AL Generator | `BC HERO: Open JSON2AL Generator` | Turn any JSON payload into ready-to-use AL code |
-| 🔌 API Explorer | `BC HERO: Open API Explorer` | Browse, test, and inspect your BC API endpoints live |
-| 🌍 Translation Assistant | `BC HERO: Open Translation Assistant` | Manage XLIFF translation files with a visual editor |
-| 🗄️ Schema Viewer | `BC HERO: Open Schema Viewer` | Explore table schemas, fields, keys, and relationships |
-| 🕸️ Dependency Graph | `BC HERO: Open Dependency Graph` | Visualise object dependencies across your workspace |
+| 🧭 Dashboard | `AL HERO: Open Dashboard` | Your project's central hub — overview, stats, quick actions, and one-click BC commands |
+| 🔍 Browse Project Symbols | `AL HERO: Browse Project Symbols` | Instantly search and navigate every AL object in your workspace |
+| 🗂️ Quick Project Setup | `AL HERO: Open Quick Project Setup` | Scaffold a standard AL folder structure in seconds |
+| 🧱 AL Object Creator | `AL HERO: Open AL Object Creator` | Generate AL objects with a guided form and batch queue |
+| 🔄 JSON → AL Generator | `AL HERO: Open JSON2AL Generator` | Turn any JSON payload into ready-to-use AL code |
+| 🔌 API Explorer | `AL HERO: Open API Explorer` | Browse, test, and inspect your BC API endpoints live |
+| 🌍 Translation Assistant | `AL HERO: Open Translation Assistant` | Manage XLIFF translation files with a visual editor |
+| 🗄️ Schema Viewer | `AL HERO: Open Schema Viewer` | Explore table schemas, fields, keys, and relationships |
+| 🕸️ Dependency Graph | `AL HERO: Open Dependency Graph` | Visualise object dependencies across your workspace |
+| 🏗️ Legacy Object Converter | `AL HERO: Open Legacy Object Converter` | Migrate exported NAV C/AL objects into Business Central AL, edited and saved like any normal VS Code file |
 
 ---
 
-## Commands Reference
+# 1. Dashboard
 
-All commands are available from the **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`). Type `BC HERO` to filter the list.
+The **Dashboard** is the central hub of AL Hero and serves as the default landing page for the extension. It provides a live overview of your workspace, key project information, and one-click access to every AL Hero tool.
 
-```
-BC HERO: Open Quick Project Setup
-BC HERO: Open AL Object Creator
-BC HERO: Open JSON2AL Generator
-BC HERO: Open API Explorer
-BC HERO: Open Translation Assistant
-BC HERO: Open Schema Viewer
-BC HERO: Open Dependency Graph
-```
+> **Note:** The Dashboard is available **only** through the **AL Hero Activity Bar**. It is the root view of the extension and **cannot be opened from the Command Palette by design**.
+
+![Dashboard](images/Dashboard.png)
+
+## How to Use
+
+1. Click the **AL Hero** icon in the Visual Studio Code **Activity Bar**.
+2. The **Dashboard** opens automatically as the main AL Hero view.
+3. Review the **Workspace Overview** card to see your detected `app.json` information, including the app name, publisher, version, target, and workspace root.
+4. View **Project Statistics** for live counts of tables, pages, codeunits, reports, and other AL objects.
+5. Use **Quick Actions** to launch any AL Hero feature with a single click.
+6. Run common **Business Central** operations, such as downloading symbols, publishing to a sandbox, or packaging your extension, directly from the Dashboard.
+
+## Features at a Glance
+
+* **Default AL Hero landing page** — opens from the Activity Bar as the extension's main view.
+* **Workspace overview** — displays your active project's identity and location.
+* **Project information** — surfaces important `app.json` metadata.
+* **Project statistics** — live object counts across your workspace.
+* **Quick Actions** — one-click access to all AL Hero tools.
+* **Business Central commands** — execute common development tasks directly from the Dashboard.
 
 ---
 
-## 1. Quick Project Setup
 
-**Command:** `BC HERO: Open Quick Project Setup`
+## 2. Browse Project Symbols
 
-Instantly scaffold a clean, professional AL project folder structure without leaving VS Code. Instead of manually creating directories, select the components your project needs and BC HERO creates them all in one click.
+**Command:** `AL HERO: Browse Project Symbols`
+
+A fast, searchable workspace explorer that lets you browse every AL object in the current project — including objects pulled in from referenced symbol packages — without digging through folders in the VS Code Explorer.
+
+![Browse Project Symbols](images/BrowseProjectSymbols.png)
+
+### How to Use
+
+1. Open the panel via the Command Palette.
+2. AL Hero automatically **scans the workspace** (and linked symbol packages) and lists every detected object.
+3. Use the **search bar** to instantly filter objects by name, ID, or type as you type.
+4. Use the **Type filter** to narrow the list down to a specific object type (Table, Page, Codeunit, Report, Enum, and more).
+5. Click any object in the list to preview its key details — ID, type, and source location.
+6. Click **↗ Open Source** to jump straight to the object's `.al` file, or to the relevant symbol reference if it originates from a dependency.
+
+### Features at a Glance
+
+- **Instant search** — filter thousands of objects in real time as you type.
+- **Type filtering** — narrow results down to a single object type at a time.
+- **Object navigation** — jump between results without losing your place.
+- **Workspace scanning** — automatically picks up new objects as your project grows; rescan on demand to refresh results.
+- **Open source directly** — one click takes you from the symbol list straight to the underlying AL code.
+
+---
+
+## 3. Quick Project Setup
+
+**Command:** `AL HERO: Open Quick Project Setup`
+
+Instantly scaffold a clean, professional AL project folder structure without leaving VS Code. Instead of manually creating directories, select the components your project needs and AL HERO creates them all in one click.
 
 ![Quick Project Setup](images/QuickProjectSetup.png)
 
@@ -70,7 +116,7 @@ Instantly scaffold a clean, professional AL project folder structure without lea
 
 ### Available Components
 
-BC HERO can scaffold any combination of the following standard AL folders:
+AL HERO can scaffold any combination of the following standard AL folders:
 
 `Tables` · `Pages` · `Reports` · `XMLPorts` · `Queries` · `Codeunits` · `ControlAddIns` · `PageExtensions` · `TableExtensions` · `Profiles` · `PageCustomizations` · `Enums` · `EnumExtensions` · `DotNetPackages` · `Interfaces` · `ReportExtensions`
 
@@ -83,9 +129,9 @@ BC HERO can scaffold any combination of the following standard AL folders:
 
 ---
 
-## 2. AL Object Creator
+## 4. AL Object Creator
 
-**Command:** `BC HERO: Open AL Object Creator`
+**Command:** `AL HERO: Open AL Object Creator`
 
 A guided, form-based wizard for generating AL object files. Configure each object's type, ID, name, fields, and destination — then queue multiple objects and create them all at once.
 
@@ -135,11 +181,11 @@ A guided, form-based wizard for generating AL object files. Configure each objec
 
 ---
 
-## 3. JSON → AL Generator
+## 5. JSON → AL Generator
 
-**Command:** `BC HERO: Open JSON2AL Generator`
+**Command:** `AL HERO: Open JSON2AL Generator`
 
-Drop any JSON file onto BC HERO and receive fully structured AL code — tables, pages, or XMLports — with fields, types, and captions inferred automatically from the JSON data.
+Drop any JSON file onto AL HERO and receive fully structured AL code — tables, pages, or XMLports — with fields, types, and captions inferred automatically from the JSON data.
 
 ![AL JSON To AL Generator](images/JSON2AL.png)
 
@@ -147,7 +193,7 @@ Drop any JSON file onto BC HERO and receive fully structured AL code — tables,
 
 1. Open the panel. The left side shows a **drop zone**.
 2. **Drag and drop** a `.json` file onto the drop zone, or click **Browse** to select one. OData responses (`{ "value": [...] }`) and plain JSON arrays or objects are all supported.
-3. BC HERO analyses the JSON and lists all detected **fields** in the left panel, showing each field's inferred AL type and a sample value from the data.
+3. AL HERO analyses the JSON and lists all detected **fields** in the left panel, showing each field's inferred AL type and a sample value from the data.
 4. Use the checkboxes to **select or deselect** individual fields. Use **All** / **None** buttons to toggle everything at once.
 5. Choose an **object type** from the tabs along the top: **Table**, **Page List**, **Page Card**, or **XMLport**.
 6. Fill in the **configuration panel** (object number, name, source table, etc.) for the chosen type.
@@ -157,7 +203,7 @@ Drop any JSON file onto BC HERO and receive fully structured AL code — tables,
 
 ### Field Type Inference
 
-BC HERO maps JSON value types to sensible AL defaults:
+AL HERO maps JSON value types to sensible AL defaults:
 
 | JSON Type | Default AL Type |
 |---|---|
@@ -179,9 +225,9 @@ All inferred types can be overridden in the field configuration table before gen
 
 ---
 
-## 4. API Explorer
+## 6. API Explorer
 
-**Command:** `BC HERO: Open API Explorer`
+**Command:** `AL HERO: Open API Explorer`
 
 A full-featured HTTP client built specifically for Business Central APIs. Browse API endpoints discovered in your workspace, configure authentication, build requests with query parameters, and inspect responses — all inside VS Code.
 
@@ -239,9 +285,9 @@ Once a JSON response is loaded, a **search bar** appears above the response body
 
 ---
 
-## 5. Translation Assistant
+## 7. Translation Assistant
 
-**Command:** `BC HERO: Open Translation Assistant`
+**Command:** `AL HERO: Open Translation Assistant`
 
 A visual XLIFF editor for managing Business Central translation files. View progress across all locales, edit translations inline, validate quality, and save changes — all without leaving VS Code.
 
@@ -251,7 +297,7 @@ A visual XLIFF editor for managing Business Central translation files. View prog
 
 #### Select a Translation File
 
-1. Open the panel. BC HERO scans your workspace for XLIFF files (`.xlf`) in a `Translations` folder.
+1. Open the panel. AL HERO scans your workspace for XLIFF files (`.xlf`) in a `Translations` folder.
 2. The **left panel** lists all files found, each showing:
    - A **language flag** and locale code.
    - A **progress bar** and percentage showing how many strings are translated.
@@ -280,7 +326,7 @@ A visual XLIFF editor for managing Business Central translation files. View prog
 
 #### Notes
 
-- Click the **⊟ note icon** on any row to open a flyout showing developer notes and BC HERO notes attached to that translation unit.
+- Click the **⊟ note icon** on any row to open a flyout showing developer notes and AL HERO notes attached to that translation unit.
 - Notes are read-only and help you understand the context of each string.
 
 #### Validation
@@ -298,9 +344,9 @@ A visual XLIFF editor for managing Business Central translation files. View prog
 
 ---
 
-## 6. Schema Viewer
+## 8. Schema Viewer
 
-**Command:** `BC HERO: Open Schema Viewer`
+**Command:** `AL HERO: Open Schema Viewer`
 
 Explore Business Central table schemas visually. Browse tables, inspect every field's type and metadata, view keys and indexes, and understand relationships through an interactive force-directed graph.
 
@@ -357,9 +403,9 @@ The lower half of the right panel shows an interactive **force-directed relation
 
 ---
 
-## 7. Dependency Graph
+## 9. Dependency Graph
 
-**Command:** `BC HERO: Open Dependency Graph`
+**Command:** `AL HERO: Open Dependency Graph`
 
 A full-workspace, interactive dependency map showing how your AL objects relate to one another. See which pages extend which tables, which codeunits subscribe to which events, and how every object fits into the larger picture.
 
@@ -371,7 +417,7 @@ A full-workspace, interactive dependency map showing how your AL objects relate 
 
 ### How to Use
 
-1. Open the panel. BC HERO scans the workspace and builds the graph automatically.
+1. Open the panel. AL HERO scans the workspace and builds the graph automatically.
 2. The graph renders all objects as **colour-coded nodes** grouped by object type, with directed edges representing dependencies.
 3. **Click a node** to focus it — its direct connections are highlighted and everything else is dimmed. Click the same node or the background to clear.
 4. **Drag nodes** to reorganise the layout. Pan by dragging the background. Zoom with the scroll wheel.
@@ -406,12 +452,66 @@ Edges are colour-coded by the kind of dependency they represent:
 
 ---
 
+## 10. Legacy Object Converter
+
+**Command:** `AL HERO: Open Legacy Object Converter`
+
+A migration workspace for converting exported Microsoft Dynamics NAV (C/AL) `.txt` objects into Business Central AL. Rather than previewing the generated code in a custom panel, AL HERO opens each converted object as a **real `.al` file in a normal VS Code editor tab** — so you get genuine AL syntax highlighting, IntelliSense, and live compiler diagnostics from the AL Language extension while you review it, and saving the file is what completes the migration for that object.
+
+![Legacy Object Converter](images/LegacyObjectConverter.png)
+
+### How to Use
+
+#### Import
+
+1. Open the panel via the Command Palette.
+2. Set the **Destination Folder** — where converted `.al` files will be written — using the **Browse** button.
+3. Click **Import NAV Objects** and select one or more exported NAV `.txt` files. Multiple files can be selected in a single dialog.
+4. AL HERO reads each file's `OBJECT` header to detect its type, ID, and name, and adds it to the **Conversion Queue** on the left, grouped by object type by default.
+
+#### Convert & Review
+
+1. Click any object in the queue. AL HERO converts it and opens the generated AL code as a normal, editable VS Code tab in a wide column beside the queue — the same editing experience as any other `.al` file in your project.
+2. Edit the code as needed: fix names, adjust types, resolve object ID conflicts, or clean up anything the conversion didn't get quite right. Compiler errors and warnings from the AL Language extension appear inline as you go, exactly like normal AL development.
+3. Nothing is written to disk yet at this point — the tab shows unsaved changes, the same as creating any new file in VS Code.
+
+#### Export
+
+There's no separate export step or button — **saving the file is the export**.
+
+1. Press `Ctrl+S` once the AL code looks right.
+2. VS Code writes it directly into your chosen Destination Folder.
+3. The object's status in the queue flips to **Exported**. You can reopen and re-save an exported object at any time — every save keeps it up to date.
+
+#### Manage a Large Migration
+
+Objects move through three states as you work: **Not Started** → **In Progress** (opened, not yet saved) → **Exported** (saved at least once).
+
+- Use the **search box** to filter the queue by object name, type, or ID.
+- Use the **status** and **sort** dropdowns to organise a large batch — sorting by **Type** groups Tables, Pages, Table Extensions, Page Extensions, Codeunits, Reports, XMLPorts, Queries, Enums, and other object types together, so you can migrate one object type at a time.
+- Each queued object has two quick actions: **📄 Open Original TXT** (opens the source NAV export beside your AL editor for side-by-side comparison, without permanently splitting your layout) and **✕ Remove from Queue** (stops tracking the object — it never deletes a file you've already saved).
+- Exported objects stay visible in the queue rather than disappearing, so a multi-session migration across hundreds of objects stays easy to track.
+
+### Features at a Glance
+
+- **Multi-file import** — bring in several NAV `.txt` exports in one go.
+- **Automatic object detection** — each file's object type, ID, and name are parsed straight from its `OBJECT` header, no manual tagging.
+- **Grouped, searchable, sortable queue** — built to stay usable across large NAV-to-Business-Central migrations, not just a handful of objects.
+- **Real AL editing, not a custom preview** — every converted object opens as an actual `.al` file, so you get the full AL Language extension experience: syntax highlighting, IntelliSense, formatting, and live diagnostics.
+- **Save-to-export workflow** — no separate export dialog; saving the file is exporting it, the same muscle memory as everything else you do in VS Code.
+- **Compare with the source** — jump back to the original C/AL export at any time with one click.
+- **Session-persistent queue** — objects and their status remain in the queue after export, ready to pick back up in a later session.
+
+---
+
 ## Getting Started
 
-1. Install **BC HERO** from the Visual Studio Marketplace.
+1. Install **AL HERO** from the Visual Studio Marketplace.
 2. Open a Business Central AL workspace in VS Code.
-3. Open the **Command Palette** (`Ctrl+Shift+P`) and type `BC HERO` to see all available tools.
-4. For API-related features, open **API Explorer** and configure your connection credentials via the **⚙ Connection Settings** dialog before sending requests.
+3. Open the **Command Palette** (`Ctrl+Shift+P`) and type `AL HERO` to see all available tools.
+4. Start from the **Dashboard** for a quick overview of your project, or jump straight into any tool from the Command Palette.
+5. For API-related features, open **API Explorer** and configure your connection credentials via the **⚙ Connection Settings** dialog before sending requests.
+6. Migrating from NAV? Open the **Legacy Object Converter**, set a destination folder, and import your exported C/AL `.txt` files to get started.
 
 ---
 
@@ -420,19 +520,22 @@ Edges are colour-coded by the kind of dependency they represent:
 | Shortcut | Action |
 |---|---|
 | `Ctrl+Enter` | Send request (API Explorer) / Add object to queue (AL Object Creator) |
+| `Ctrl+S` | Export the currently open object (Legacy Object Converter) |
 | `Escape` | Close modal dialogs / Discard inline translation edit |
-| `Ctrl+Shift+P` → `BC HERO` | Open any BC HERO tool from the Command Palette |
+| `Ctrl+Shift+P` → `AL HERO` | Open any AL HERO tool from the Command Palette |
 
-- **Rescan buttons** (↺) are available in the API Explorer, Translation Assistant, and AL Object Creator to refresh workspace data without closing and reopening a panel.
-- All BC HERO panels share a consistent dark theme, layout, and keyboard patterns — once you learn one, the others feel immediately familiar.
+- **Rescan buttons** (↺) are available in the API Explorer, Translation Assistant, Browse Project Symbols, and AL Object Creator to refresh workspace data without closing and reopening a panel.
+- All AL HERO panels share a consistent dark theme, layout, and keyboard patterns — once you learn one, the others feel immediately familiar.
 - In the **API Explorer**, the `company` parameter is automatically pinned to the top of the params table and displayed with a distinct accent style so it's never accidentally removed.
 - In the **Translation Assistant**, auto-save is silent by default — the VS Code panel only shows a notification for batch operations, not for individual inline edits, keeping your workflow uninterrupted.
+- In the **Legacy Object Converter**, there's no separate export button to remember — if you've saved the AL file, it's exported.
+- Start every session from the **Dashboard** to get a quick health check of your workspace before diving into a specific tool.
 
 ---
 
 ## Marketplace
 
-BC HERO is available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=yahyatouil.bc-hero). Search for **BC HERO** or install directly from the Extensions view in VS Code (`Ctrl+Shift+X`).
+AL HERO is available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=yahyatouil.bc-hero). Search for **AL HERO** or install directly from the Extensions view in VS Code (`Ctrl+Shift+X`).
 
 ---
 
@@ -445,7 +548,7 @@ To submit feedback:
 1. Visit the [GitHub Issues page](https://github.com/yahyatouil-dev/bc-hero-info/issues).
 2. Open a new issue with details about the problem or your feature request.
 
-Your input helps improve BC HERO, and we appreciate any contributions you make!
+Your input helps improve AL HERO, and we appreciate any contributions you make!
 
 ---
 
@@ -457,13 +560,13 @@ This extension is released under the **Apache License 2.0**. You can freely use,
 
 ### **Feedback & Support**
 
-If you encounter any issues or have questions, don’t hesitate to [open an issue](https://github.com/yahyatouil-dev/bc-hero-info/issues). You can also reach out to the community for support or offer suggestions for new features.
+If you encounter any issues or have questions, don't hesitate to [open an issue](https://github.com/yahyatouil-dev/bc-hero-info/issues). You can also reach out to the community for support or offer suggestions for new features.
 
 ---
 
 ### **Stay Updated**
 
-Follow us on GitHub or the **Visual Studio Marketplace** to get the latest updates and announcements about BC HERO. As always, more features are in the pipeline to make your BC development experience even better.
+Follow us on GitHub or the **Visual Studio Marketplace** to get the latest updates and announcements about AL HERO. As always, more features are in the pipeline to make your BC development experience even better.
 
 
 ---
@@ -472,8 +575,7 @@ Made with ❤️ by **Yahya Touil**.
 
 Check out my blog for more insights, tutorials, and updates on Business Central and AL development: [Yahya's Blog](https://yahyatouil.com).
 
-Thank you for supporting **BC HERO** — your feedback and feature requests are always appreciated!
+Thank you for supporting **AL HERO** — your feedback and feature requests are always appreciated!
 ---
 
-
-*BC HERO — Built for Business Central AL developers.*
+*AL HERO — Built for Business Central AL developers.*
