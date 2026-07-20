@@ -1,6 +1,6 @@
 # ⛉ AL HERO - All-in-One Toolkit for Business Central
 
-![BC HERO COVER IMAGE](images/BC HERO.avif)
+![BC HERO COVER IMAGE](images/BC%20HERO.avif)
 
 > **AL Hero** is an all-in-one productivity toolkit for Microsoft Dynamics 365 Business Central AL developers. Build faster with project dashboards, project symbol browsing, AL object generation, JSON-to-AL conversion, API exploration, translation management, schema visualization, dependency analysis, and legacy C/AL migration—all from within Visual Studio Code.
 
